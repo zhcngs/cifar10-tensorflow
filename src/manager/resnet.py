@@ -76,9 +76,11 @@ class Manager():
 
     def train(self):
         if not os.path.exists(self.backups_dir):
-            os.mkdir(self.backups_dir)
+            # os.mkdir(self.backups_dir)
+            os.makedirs(self.backups_dir)
         if not os.path.exists(os.path.join(self.backups_dir, 'basic')):
-            os.mkdir(os.path.join(self.backups_dir, 'basic'))
+            # os.mkdir(os.path.join(self.backups_dir, 'basic'))
+            os.makedirs(os.path.join(self.backups_dir, 'basic'))
 
         # 构建会话
         self.sess = self._init_train()
@@ -149,7 +151,7 @@ class Manager():
             et = time.time()
             valid_span = et - st
             
-            print('epoch[%d], iter[%d], data time: %.2fs, train time: %.2fs, valid time: %.2fs' % (
+            print('epoch[%d], iter[%d], CIFAR10_data time: %.2fs, train time: %.2fs, valid time: %.2fs' % (
                 epoch, iteration, data_span, train_span, valid_span))
             print('epoch[%d], iter[%d], train loss: %.6f, train precision: %.6f, '
                 'valid loss: %.6f, valid precision: %.6f\n' % (

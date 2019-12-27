@@ -178,7 +178,7 @@ class ConvNet():
             valid_accuracy = 1.0 * valid_accuracy / dataloader.n_valid
             valid_loss = 1.0 * valid_loss / dataloader.n_valid
             
-            print('epoch[%d], iter[%d], data time: %.2fs, train time: %.2fs' % (
+            print('epoch[%d], iter[%d], CIFAR10_data time: %.2fs, train time: %.2fs' % (
                 epoch, iteration, data_span, train_span))
             print('epoch[%d], iter[%d], train loss: %.6f, train precision: %.6f, '
                 'valid loss: %.6f, valid precision: %.6f\n' % (

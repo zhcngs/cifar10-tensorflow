@@ -99,8 +99,8 @@ class RNN:
         print(temp.shape)
 
 
-trainset = Dataset('../data/iris/iris_training.csv')
-testset = Dataset('../data/iris/iris_test.csv')
+trainset = Dataset('../CIFAR10_data/iris/iris_training.csv')
+testset = Dataset('../CIFAR10_data/iris/iris_test.csv')
 rnn = RNN()
 rnn.construct_model(batch_size=2)
 rnn.train(trainset, batch_size=10)

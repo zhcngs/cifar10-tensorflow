@@ -38,12 +38,16 @@ class Dataloader:
         # 读取训练集
         images, labels = [], []
         for filename in ['%s/data_batch_%d' % (directory, j) for j in range(1, 6)]:
-            with open(filename, 'rb') as fo:
-                if 'Windows' in platform.platform():
-                    cifar10 = pickle.load(fo, encoding='bytes')
-                elif 'Linux' in platform.platform():
-                    cifar10 = pickle.load(fo)
+            try:
+                with open(filename, 'rb') as fo:
+                    if 'Windows' in platform.platform():
+                        cifar10 = pickle.load(fo, encoding='bytes')
+                    elif 'Linux' in platform.platform():
+                        cifar10 = pickle.load(fo)
+            except EOFError:
+                return {}
             for i in range(len(cifar10[b"labels"])):
+                # print(cifar10[b"data"][i].shape)
                 image = numpy.reshape(cifar10[b"data"][i], (3, 32, 32))
                 image = numpy.transpose(image, (1, 2, 0))
                 image = image.astype(float)

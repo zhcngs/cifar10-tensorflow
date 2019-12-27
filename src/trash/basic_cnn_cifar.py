@@ -6,7 +6,7 @@ import tensorflow as tf
 import src.data.cifar10 as cifar10
 import matplotlib.pyplot as plt
 
-cifar10 = cifar10.read_data_sets('data/CIFAR10_data', one_hot=True)
+cifar10 = cifar10.read_data_sets('CIFAR10_data/CIFAR10_data', one_hot=True)
 
 class ConvNet:
     

@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from tensorflow.python.ops.gradient_checker import _compute_gradient
 
 
-mnist = input_data.read_data_sets('../data/MNIST_data', one_hot=True)
+mnist = input_data.read_data_sets('../CIFAR10_data/MNIST_data', one_hot=True)
 
 class ConvNet:
     

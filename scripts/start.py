@@ -19,7 +19,7 @@ class Starter:
         from src.manager.resnet import Manager
             
         # 读取配置
-        config_path = os.path.join('src/config/options/resnet.yaml')
+        config_path = os.path.join('E:/workspace/cifar10-tensorflow/src/config/options/resnet.yaml')
         self.option = yaml.load(open(config_path, 'r'))
         
         # 实例化data模块
